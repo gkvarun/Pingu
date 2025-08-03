@@ -1,0 +1,96 @@
+/* ---------- Font ---------- */
+@font-face {
+  font-family: 'ClashDisplay-Variable';
+  src: url('fonts/ClashDisplay-Variable.woff2') format('woff2'),
+       url('fonts/ClashDisplay-Variable.woff') format('woff'),
+       url('fonts/ClashDisplay-Variable.ttf') format('truetype');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ---------- Base ---------- */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{
+    font-family:"Playfair Display",serif;
+    overflow-x:hidden;
+    background:#f5f5f5;
+    color:#000;
+}
+h1,h2,h3{font-weight:900}
+
+/* ---------- Navigation ---------- */
+.navigation{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1rem 2rem;
+    background:rgba(245,245,245,.95);backdrop-filter:blur(10px);
+    font-size:.8rem;letter-spacing:.5px;transition:.3s ease;
+}
+.nav-left,.nav-right{display:flex;gap:1.5rem}
+
+/* ---------- Section 1 (Hero) ---------- */
+.section-1{
+    height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:8rem 2rem 4rem;text-align:center
+}
+.hero-description{
+    font-size:clamp(1.2rem,3vw,2.5rem);line-height:1.4;margin-bottom:4rem;color:#333
+}
+.underlined{
+    text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px
+}
+.hero-title h1{
+    font-size:clamp(4rem,15vw,12rem);letter-spacing:-.02em;line-height:.8;text-transform:uppercase;
+    display:inline-block;position:relative;cursor:none; font-family:"ClashDisplay-Variable" !important; font-weight: 500;
+}
+.hero-title h1 .letter{
+    display:inline-block;will-change:transform;transform-origin:center;transition:none;
+    font-family:"ClashDisplay-Variable" !important;font-weight: 700;
+}
+.author-credit{position:absolute;bottom:2rem;right:2rem;font-size:1rem;color:#666}
+
+/* ---------- Section 2 ---------- */
+.section-2{min-height:400vh}
+.team-image-container{position:sticky;top:20vh;height:60vh;display:flex;justify-content:center;align-items:center}
+.team-image{
+    width:60vw;height:60vh;border-radius:20px;transform:scale(0);
+    background:url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80) center/cover
+}
+.team-text{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    font-size:clamp(2.5rem,6vw,4rem);font-weight:500;color:#fff;text-shadow:0 0 20px #000;opacity:0;
+    font-family:"ClashDisplay-Variable";
+}
+
+/* ---------- Section 3 ---------- */
+.section-3{min-height:200vh;padding:10vh 0}
+.portfolio-container{position:sticky;top:0;height:100vh;overflow:hidden}
+.portfolio-track{display:flex;height:100%}
+.portfolio-item{
+    min-width:40vw;height:80vh;margin:10vh 2vw;border-radius:20px;background-size:cover;background-position:center
+}
+.portfolio-item:nth-child(1){background-image:url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80)}
+.portfolio-item:nth-child(2){background-image:url(https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=80)}
+.portfolio-item:nth-child(3){background-image:url(https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=80)}
+.portfolio-item:nth-child(4){background-image:url(https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1000&q=80)}
+.portfolio-item:nth-child(5){background-image:url(https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80)}
+
+/* ---------- Section 4 ---------- */
+.section-4{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:5rem 2rem}
+.contact-container{max-width:800px;text-align:center}
+.contact-container h2{font-size:clamp(2.5rem,6vw,4rem);margin-bottom:2rem;font-family:"ClashDisplay-Variable" !important;
+    background:linear-gradient(45deg,#ffffff,#ffffff);background-clip:text;-webkit-text-fill-color:transparent}
+.contact-tag{font-size:1.2rem;color:#666;margin-bottom:2rem}
+.contact-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+.contact-item{background:rgba(255,255,255,.1);padding:1rem;border-radius:15px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2)}
+.contact-item h3{font-size:1.5rem;margin-bottom:1rem;color:#ffffff}
+
+/* ---------- Responsive ---------- */
+@media(max-width:768px){
+    .navigation{padding:.5rem 1rem;font-size:.7rem}
+    .nav-right{display:none}
+    .team-image{width:90vw;height:50vh}
+    .portfolio-item{min-width:80vw}
+}
